@@ -21,7 +21,7 @@ export const Header = ({ initialTheme }: { initialTheme: string }) => {
   };
 
   return (
-    <header className="flex justify-between border p-8">
+    <header className="sticky top-0 flex justify-between bg-white p-8 shadow dark:bg-slate-900 dark:shadow-slate-400">
       <Link href="/">
         <div className="flex items-center gap-2">
           <div className="grid place-content-center rounded-full p-3 dark:bg-slate-50">

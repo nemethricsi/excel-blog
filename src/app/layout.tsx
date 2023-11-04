@@ -19,9 +19,9 @@ export default function RootLayout({
 
   return (
     <html lang="hu" className={`h-full ${theme}`}>
-      <body className="flex h-full flex-col bg-white text-gray-800 dark:bg-slate-900 dark:text-slate-200">
+      <body className="flex h-full flex-col bg-neutral-100 text-gray-800 dark:bg-slate-800 dark:text-slate-200">
         <Header initialTheme={theme} />
-        {children}
+        <main className="p-8">{children}</main>
         <Footer />
       </body>
     </html>
