@@ -14,8 +14,8 @@ export default async function SinglePost({
   return (
     <div className="mx-auto max-w-6xl">
       <Link
-        href="/"
-        className="mb-4 inline-block rounded-2xl p-4 hover:bg-slate-100 dark:bg-slate-700 dark:hover:bg-slate-600"
+        href="/blog"
+        className="mb-4 inline-block rounded-2xl bg-neutral-200 p-4 hover:bg-neutral-300  dark:bg-slate-700 dark:hover:bg-slate-600"
       >
         <ArrowLeft strokeWidth={4} />
       </Link>
