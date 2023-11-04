@@ -37,18 +37,20 @@ export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
 export const getFunctionsList = async () => {
   const fileNames = await readDirectory('/content/functions');
 
-  const functions = [];
+  const excelFunctions = [];
 
   for (let fileName of fileNames) {
     const rawContent = await readFile(`/content/functions/${fileName}`);
 
     const { data: frontmatter } = matter(rawContent);
 
-    functions.push({
+    excelFunctions.push({
       slug: fileName.replace('.mdx', ''),
       title: frontmatter.title,
     });
   }
+
+  return excelFunctions;
 };
 
 export const loadFunction = React.cache(async function loadFunction(slug) {
