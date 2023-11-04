@@ -34,7 +34,9 @@ export const Header = ({ initialTheme }: { initialTheme: string }) => {
               priority
             />
           </div>
-          <h1 className="hidden text-3xl sm:block">Excel Blog</h1>
+          <h1 className="hidden text-3xl font-black sm:block">
+            Excel Blog
+          </h1>
         </div>
       </Link>
       <div className="flex items-center gap-12">

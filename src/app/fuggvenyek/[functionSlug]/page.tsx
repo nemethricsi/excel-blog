@@ -12,14 +12,14 @@ export default async function FunctionPage({
   const { frontmatter, content } = await loadFunction(functionSlug);
 
   return (
-    <div className="mx-auto max-w-6xl">
+    <div className="mx-auto max-w-4xl">
       <Link
         href="/fuggvenyek"
         className="mb-4 inline-block rounded-2xl bg-neutral-200 p-4 hover:bg-neutral-300  dark:bg-slate-700 dark:hover:bg-slate-600"
       >
         <ArrowLeft strokeWidth={4} />
       </Link>
-      <h1 className="text-2xl font-bold md:text-3xl">
+      <h1 className="text-2xl font-extrabold md:text-3xl tracking-wide">
         {frontmatter.title}
       </h1>
       <div>

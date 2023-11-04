@@ -5,7 +5,7 @@ export const CodeSnippet = (props: any) => {
     <Code
       {...props}
       theme="one-dark-pro"
-      className="dark:border dark:border-slate-700"
+      className="dark:border dark:border-slate-600"
     />
   );
 };

@@ -12,7 +12,7 @@ export default async function SinglePost({
   const { frontmatter, content } = await loadBlogPost(postSlug);
 
   return (
-    <div className="mx-auto max-w-6xl">
+    <div className="mx-auto max-w-4xl">
       <Link
         href="/blog"
         className="mb-4 inline-block rounded-2xl bg-neutral-200 p-4 hover:bg-neutral-300  dark:bg-slate-700 dark:hover:bg-slate-600"

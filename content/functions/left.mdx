@@ -1,3 +1,33 @@
 ---
 title: 'BAL (LEFT)'
 ---
+
+Az Excel LEFT (BAL) függvény egy hasznos eszköz a szöveges adatok kezelésére, amely lehetővé teszi, hogy egy szövegről az első néhány karaktert kivágd. Használata gyakori, különösen akkor, amikor például telefonszámokból, címekből vagy más szöveges mezőkből szeretnénk csak egy részt megjeleníteni.
+
+A függvény alapvető szerkezete a következő:
+
+```
+=LEFT(szöveg, karakterek_száma)
+```
+
+`szöveg:` Ez a cella vagy szövegrészlet, amelyből karaktereket szeretnénk kivágni.
+
+`karakterek_száma:` Ez a szám mutatja meg, hogy hány karaktert szeretnénk kivágni a balról.
+
+#### Példa a LEFT Függvény Használatára:
+
+Vegyük például az alábbi telefonszámokat, amelyek az országkód után tartalmazzák a telefonszámot:
+
+- +36 20 123 4567
+- +1 555 789 0123
+
+Ha csak a telefonszámokat szeretnénk megjeleníteni, az országkód nélkül, az Excel LEFT függvénnyel könnyedén megoldhatjuk:
+
+```
+=LEFT(A1, LEN(A1)-3)
+=LEFT(A2, LEN(A2)-5)
+```
+
+Ebben a példában a `LEN` függvény segítségével meghatározzuk az eredeti szöveg hosszát, majd az -3 vagy -5 értékkel kivágjuk az országkódot tartalmazó karaktereket.
+
+Az Excel LEFT (BAL) függvény gyors és hatékony megoldást kínál a szöveges adatok formázására és kivágására. Használata segít rendezett és áttekinthető adatok létrehozásában anélkül, hogy elveszítenénk az eredeti információkat. Próbáld ki ezt a függvényt, és fedezd fel a szöveges adatok kezelésének egyszerűségét az Excelben!
