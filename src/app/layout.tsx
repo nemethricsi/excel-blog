@@ -1,11 +1,6 @@
 import type { Metadata } from 'next';
-import { Karla } from 'next/font/google';
 import './globals.css';
 import { SITE_NAME } from '@/constants';
-
-const karla = Karla({
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: SITE_NAME,
@@ -19,9 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`leading-relaxed ${karla.className}`}>
-        {children}
-      </body>
+      <body className="leading-relaxed">{children}</body>
     </html>
   );
 }

@@ -4,12 +4,12 @@ import path from 'path';
 import React from 'react';
 
 export const getBlogPostList = async () => {
-  const fileNames = await readDirectory('/content');
+  const fileNames = await readDirectory('/content/blog-posts');
 
   const blogPosts = [];
 
   for (let fileName of fileNames) {
-    const rawContent = await readFile(`/content/${fileName}`);
+    const rawContent = await readFile(`/content/blog-posts/${fileName}`);
 
     const { data: frontmatter } = matter(rawContent);
 
@@ -27,7 +27,32 @@ export const getBlogPostList = async () => {
 };
 
 export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
-  const rawContent = await readFile(`/content/${slug}.mdx`);
+  const rawContent = await readFile(`/content/blog-posts/${slug}.mdx`);
+
+  const { data: frontmatter, content } = matter(rawContent);
+
+  return { frontmatter, content };
+});
+
+export const getFunctionsList = async () => {
+  const fileNames = await readDirectory('/content/functions');
+
+  const functions = [];
+
+  for (let fileName of fileNames) {
+    const rawContent = await readFile(`/content/functions/${fileName}`);
+
+    const { data: frontmatter } = matter(rawContent);
+
+    functions.push({
+      slug: fileName.replace('.mdx', ''),
+      title: frontmatter.title,
+    });
+  }
+};
+
+export const loadFunction = React.cache(async function loadFunction(slug) {
+  const rawContent = await readFile(`/content/functions/${slug}.mdx`);
 
   const { data: frontmatter, content } = matter(rawContent);
 
