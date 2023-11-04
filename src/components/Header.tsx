@@ -14,7 +14,8 @@ export const Header = ({ initialTheme }: { initialTheme: string }) => {
     Cookie.set(COLOR_THEME_COOKIE, newTheme, { expires: 1000 });
 
     const root = document.documentElement;
-    root.setAttribute('data-color-theme', newTheme);
+    root.classList.remove(theme);
+    root.classList.add(newTheme);
   };
 
   return (

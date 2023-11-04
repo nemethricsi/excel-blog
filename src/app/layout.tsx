@@ -18,8 +18,8 @@ export default function RootLayout({
   const theme = cookies().get(COLOR_THEME_COOKIE)?.value || 'light';
 
   return (
-    <html lang="hu" data-color-theme={theme} className="h-full">
-      <body className="flex h-full flex-col bg-white text-gray-800 dark:bg-slate-900 dark:text-white">
+    <html lang="hu" className={`h-full ${theme}`}>
+      <body className="flex h-full flex-col bg-white text-gray-800 dark:bg-slate-900 dark:text-slate-200">
         <Header initialTheme={theme} />
         {children}
         <Footer />
