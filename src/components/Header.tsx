@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Sun, Moon } from 'react-feather';
 import Cookie from 'js-cookie';
@@ -20,7 +22,21 @@ export const Header = ({ initialTheme }: { initialTheme: string }) => {
 
   return (
     <header className="flex justify-between border p-8">
-      <h1>Excel Blog</h1>
+      <Link href="/">
+        <div className="flex items-center gap-2">
+          <div className="grid place-content-center rounded-full p-3 dark:bg-slate-50">
+            <Image
+              src="/excel-logo.svg"
+              alt="Excel Logo"
+              className="-translate-x-1"
+              width={40}
+              height={24}
+              priority
+            />
+          </div>
+          <h1 className="text-3xl">Excel Blog</h1>
+        </div>
+      </Link>
       <button onClick={toggleTheme}>
         {theme === 'light' ? <Sun /> : <Moon />}
       </button>
