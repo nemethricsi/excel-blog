@@ -3,7 +3,7 @@ import matter from 'gray-matter';
 import path from 'path';
 import React from 'react';
 
-export const getBlogPostList = async () => {
+export async function getBlogPostList() {
   const fileNames = await readDirectory('/content/blog-posts');
 
   const blogPosts = [];
@@ -24,7 +24,7 @@ export const getBlogPostList = async () => {
   return blogPosts.sort((p1, p2) =>
     p1.publishedOn < p2.publishedOn ? 1 : -1
   );
-};
+}
 
 export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
   const rawContent = await readFile(`/content/blog-posts/${slug}.mdx`);
@@ -34,7 +34,7 @@ export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
   return { frontmatter, content };
 });
 
-export const getFunctionsList = async () => {
+export async function getFunctionsList() {
   const fileNames = await readDirectory('/content/functions');
 
   const excelFunctions = [];
@@ -51,7 +51,7 @@ export const getFunctionsList = async () => {
   }
 
   return excelFunctions;
-};
+}
 
 export const loadFunction = React.cache(async function loadFunction(slug) {
   const rawContent = await readFile(`/content/functions/${slug}.mdx`);
