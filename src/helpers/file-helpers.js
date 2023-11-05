@@ -4,12 +4,12 @@ import path from 'path';
 import React from 'react';
 
 export async function getBlogPostList() {
-  const fileNames = await readDirectory('/content/blog-posts');
+  const fileNames = await readDirectory('/content/posts');
 
   const blogPosts = [];
 
   for (let fileName of fileNames) {
-    const rawContent = await readFile(`/content/blog-posts/${fileName}`);
+    const rawContent = await readFile(`/content/posts/${fileName}`);
 
     const { data: frontmatter } = matter(rawContent);
 
@@ -27,7 +27,7 @@ export async function getBlogPostList() {
 }
 
 export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
-  const rawContent = await readFile(`/content/blog-posts/${slug}.mdx`);
+  const rawContent = await readFile(`/content/posts/${slug}.mdx`);
 
   const { data: frontmatter, content } = matter(rawContent);
 
